@@ -1,26 +1,57 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2'
+
+import {connect} from 'react-redux';
+import {handleSingup, handleSingIn,handleIsSingInToken } from '../actions/singActions';
+
 
 class SingOut extends Component {
-    state = {  }
     usernameRef=React.createRef()
     passwordRef=React.createRef()
+    
+    async componentWillReceiveProps  (){      
+       const a =await this.props.handleIsSingInToken()
+    }
+    
 
-    handlegetSingUp=(e)=>{
+    swalFire=(title)=>{
+      return(
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: title
+      })
+      )
+    }    
+
+    alertFail=(success)=>{
+      console.log("alert",this.props.user.success);
+      if(success===401){
+        return(this.swalFire('Usuario o clave invalida!'))
+      }
+      else if(success===404)
+      {
+        return(this.swalFire('problemas de coneccion con el servidor'))
+        
+      }
+    }
+    handlegetSingUp=async(e)=>{
       e.preventDefault();
       const data = {
         username:this.usernameRef.current.value,
         password:this.passwordRef.current.value
       }
-      console.log(data);
-      
-
+      console.log("submin");
+      await this.props.handleSingIn(data)      
+      this.alertFail(this.props.user.success)
     }
+
     render() { 
+      this.props.handleIsSingInToken()
         return (
             <div className="container">          
-          <div className="row">
-            
+          <div className="row">            
             <div className="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
                 <h1 className="h1-responsive font-weight-bold mt-sm-5">SingOut </h1>
                 <hr className="hr-light"/>
@@ -58,6 +89,7 @@ class SingOut extends Component {
           
           </div>
           
+          
         </div>
 
 
@@ -65,5 +97,12 @@ class SingOut extends Component {
           );
     }
 }
+const mapStateToProps = state=>{  
+  return {
+    user:state.userData.user
+  }
+
+  
+}
  
-export default SingOut;
+export default connect(mapStateToProps,{handleSingup,handleIsSingInToken,handleSingIn})(SingOut);
