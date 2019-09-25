@@ -1,3 +1,36 @@
+.html{
+  position: relative;
+  
+}
+body{
+  
+}
+
+.footer2{
+  position : absolute;
+  width: 100vw;
+  margin-bottom: 0px;
+  
+}
+.fondo{
+   height: 100vh;
+  background-image: linear-gradient(to bottom, #4d7bc0, #2790cd, #00a3d2, #00b5d2, #31c6cd) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  
+  
+}
+div.index{
+  height: 100vh;  
+  background-image: url('https://cdn.pixabay.com/photo/2016/01/19/15/05/doctor-1149149_960_720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;  
+  width: 100vw;
+  
+}
+
 .App {
   text-align: center;
 }
@@ -8,7 +41,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
