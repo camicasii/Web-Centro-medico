@@ -166,3 +166,8 @@ export  const handleSingOut =(data)=>async dispatch=>{
 
         
     }
+    export  const dataPerson =(formData)=>async dispatch=>{                
+
+      console.log(formData);
+      
+  }

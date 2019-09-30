@@ -9,6 +9,8 @@ import Contact from './components/Contact';
 import SingIn from './components/SingIn';
 import SingOut from './components/SingUp';
 import Servicios from './components/Servicios';
+import DatosProfile from './components/Profile/DatosProfile';
+import Profile from './components/Profile/Profile';
 class AppRouter extends Component {
     state = {  }
     render() { 
@@ -33,6 +35,9 @@ class AppRouter extends Component {
                 } />
                 <Route exact path="/SingIn" component={SingIn}/>
                 <Route exact path="/SingUp" component={SingOut}/>                
+                <Route exact path="/profile" component={Profile}/>  
+                <Route exact path="/profile/data" component={DatosProfile}/>  
+                <Route exact path="/SingUp" component={SingOut}/>  
                             
                 </Switch>                
                 </div>
