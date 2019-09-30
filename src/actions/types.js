@@ -1,9 +1,5 @@
-export const SHOW_USERS = 'SHOW_USERS';
-export const SHOW_USER = 'SHOW_USER';
-export const UPDATE_USER = 'UPDATE_USER';
-export const DELETE_USER = 'DELETE_USER';
-export const SING_UP = 'SING_UP';
-export const SING_IN = 'SING_IN';
-export const SING_OUT = 'SING_OUT';
-export const IS_SING_IN = 'IS_SING_IN';
-
+export const SHOW_ITEMS = 'SHOW_ITEMS';
+export const SHOW_ITEM = 'SHOW_ITEM';
+export const ADD_ITEM = 'ADD_ITEM';
+export const UPDATE_ITEM = 'UPDATE_ITEM';
+export const DELETE_ITEM = 'DELETE_ITEM';
