@@ -20,7 +20,7 @@ class AppRouter extends Component {
 
                 
                 <Navbar/>
-                <div className="fondo d-block" id="fondo">                   
+                <div className="fondo ">                   
                 <Switch>                
                 <Route exact path="/" component={IndexPage}/>
                 <Route exact path="/about" component={About}/>

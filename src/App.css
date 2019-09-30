@@ -2,14 +2,13 @@
   position: relative;
   
 }
-body{
-  
-}
+
 
 .footer2{
   position : absolute;
   width: 100vw;
   margin-bottom: 0px;
+  
   
 }
 .fondo{
@@ -31,25 +30,42 @@ div.index{
   
 }
 
-.App {
+#sidebar{
+  position: absolute;
+  width: 15rem;
+  height: 100vh;
+  background: purple;
+  transition: all 2s ease;
+}
+
+#sidebar ul{
+  list-style: none;
+}
+.logo-conten{  
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.logo-sider {
+  width: 6rem;
+  
+}
+.tip-menu a{
+  color: aliceblue;
+}
+.tip-menu li:hover{
+  background-color: #4d7bc0;
+  height: 3rem !important;
+  
+ 
+}
+.tip-menu li{
+  transition: height 1s ease;
+  height: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.page-ware {  
+  margin-left: 15rem;
+  
 }
-
-.App-link {
-  color: #09d3ac;
+.page-ware-content{
+  
 }

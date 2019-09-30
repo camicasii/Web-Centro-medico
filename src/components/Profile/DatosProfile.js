@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import {connect  } from 'react-redux';
 
-import { dataPerson,handleIsSingInToken } from  '../../actions/singActions';
+import { handleIsSingInToken } from  '../../actions/singActions';
+import{modifyData} from '../../actions/userActios'
 
 class DatosProfile extends Component {
     state = {  }
@@ -39,7 +40,7 @@ class DatosProfile extends Component {
 
             }
             console.log(data);
-            this.props.dataPerson(data);
+            this.props.modifyData(data);
             
            
             
@@ -157,12 +158,12 @@ class DatosProfile extends Component {
 //_id
 const mapStateToProps = state=>{  
     return {
-      userId:state.userLogin.user._id,
-      a:state.userLogin.user
+      userId:state.userData.user._id,
+      a:state.userData.user
     }
   }
  
-export default connect(mapStateToProps,{dataPerson,handleIsSingInToken})(DatosProfile);
+export default connect(mapStateToProps,{modifyData,handleIsSingInToken})(DatosProfile);
 
 /*
 

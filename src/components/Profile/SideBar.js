@@ -3,12 +3,12 @@ import { Link  } from 'react-router-dom';
 
 const SideBar = (props) => {
     return ( 
-    <div id="sidebar" className="pt-3 ">
+    <div id="sidebar" className="">
     <ul className="custom-scrollbar tips" >
         <li>
           <div className="logo-conten">
             <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
-                className="rounded-circle logo-sider mb-1"/>
+                className="rounded-circle logo-sider mb-1 pt-3"/>
                 <span className="text-success d-block">AnnaDeynah</span>
           </div>
         </li>

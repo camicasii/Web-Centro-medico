@@ -15,6 +15,7 @@ export const handleSingIn=(data)=>async dispatch=>{
            res.data.token =res.data.token.split(" ")[1]                      
            Axios.defaults.headers.common={'Authorization':res.data.token}
            localStorage.setItem("token",res.data.token)
+           localStorage.setItem("check",res.data.token)
            console.log("post",Axios.defaults.headers.common.Authorization)
            const data={
                data:jwtDecode(res.data.token),
@@ -64,6 +65,9 @@ export  const handleSingup =(data)=>async dispatch=>{
     }).then(res=>{       
         res.data.token =res.data.token.split(" ")[1]                      
         Axios.defaults.headers.common={'Authorization':res.data.token}
+        localStorage.setItem("token",res.data.token)
+        localStorage.setItem("check",res.data.token)
+        const token= localStorage.setItem('token')
            const data={
                data:jwtDecode(res.data.token),
                token:res.data.token,
@@ -156,8 +160,13 @@ export  const handleSingOut =(data)=>async dispatch=>{
     }
     export  const handleIsSingInToken =(data)=>async dispatch=>{        
           const token= localStorage.getItem('token')
+          const check= localStorage.getItem("check")
+          const user=jwtDecode(token)
+          
         const data={         
-            token
+            succes:token===check,
+            user
+
         }
         dispatch({
             type:IS_SING_IN,
@@ -166,8 +175,4 @@ export  const handleSingOut =(data)=>async dispatch=>{
 
         
     }
-    export  const dataPerson =(formData)=>async dispatch=>{                
-
-      console.log(formData);
-      
-  }
+  

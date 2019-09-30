@@ -45,3 +45,12 @@ export const handleShowUser=(id)=>async dispatch=>{
     .catch(e=>console.log(e))
 }
 
+export  const modifyData =(formData)=>async dispatch=>{                
+    console.log("modifyData");
+    
+    
+}
+export  const FirsDataPerson =(formData)=>async dispatch=>{                
+    
+    
+}

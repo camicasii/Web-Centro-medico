@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 class About extends Component {
     state = {  }
     componentDidMount(){
-      let intro = document.getElementById('fondo');
-      intro.className = "index"      
+      //let intro = document.getElementById('fondo');
+      //intro.className = "index"      
       
     }
     render() { 

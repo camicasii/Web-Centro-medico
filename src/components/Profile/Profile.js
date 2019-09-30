@@ -34,8 +34,9 @@ class Profile extends Component {
 <SideBar/>
 
 <div className="page-ware ">             
-<div className="container">
-  <div className="col-md-6">
+<div className="container page-ware-content ">
+<div className="row">
+  <div className="col-md-6  order-sm-3 p-3">
     <div className="card">
       <div className="card-body">
         sadfasfasdfas
@@ -46,6 +47,19 @@ class Profile extends Component {
       </div>
     </div>
   </div>
+  <div className="col-md-6  p-3 col  order-sm-1">
+    <div className="card">
+      <div className="card-body">
+        sadfasfasdfas
+        asdf
+        asdf
+        Hola
+        
+        sadf
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 </div>
   
