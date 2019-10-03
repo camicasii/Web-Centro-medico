@@ -11,8 +11,14 @@ import SingOut from './components/SingUp';
 import Servicios from './components/Servicios';
 import DatosProfile from './components/Profile/DatosProfile';
 import Profile from './components/Profile/Profile';
+
+import { connect  } from  'react-redux';
+import { handleIsSingInToken} from  './actions/singActions'
 class AppRouter extends Component {
     state = {  }
+    componentDidMount(){
+        this.props.handleIsSingInToken();
+    }
     render() { 
         return (
             <Router>
@@ -49,4 +55,4 @@ class AppRouter extends Component {
     }
 }
  
-export default AppRouter;
+export default connect(null,{handleIsSingInToken})(AppRouter);

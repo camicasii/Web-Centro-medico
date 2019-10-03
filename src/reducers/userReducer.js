@@ -1,4 +1,5 @@
-import {SING_IN,SING_UP,SHOW_USERS, SING_OUT,IS_SING_IN} from '../actions/types';
+import {SING_IN,SING_UP,SHOW_USERS, SING_OUT,IS_SING_IN,
+    SING_FIRST} from '../actions/types';
 
 //casa reducer tiene su propio state
 
@@ -13,6 +14,11 @@ const initialState ={
 export default function(state=initialState, action){
     switch(action.type){
 
+        case SING_FIRST:
+                return{
+                    ...state,
+                    firtstLogin:action.payload.firtstLogin
+                }                    
 
             case SHOW_USERS:
             return{

@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 import {connect} from 'react-redux';
-import {handleSingup, handleSingIn,handleIsSingInToken } from '../actions/singActions';
+import {handleSingup,handleIsSingInToken } from '../actions/singActions';
 
 
 class SingOut extends Component {
     usernameRef=React.createRef()
     passwordRef=React.createRef()
-    
-    async componentWillReceiveProps  (){      
-       const a =await this.props.handleIsSingInToken()
-    }
     
 
     swalFire=(title)=>{
@@ -25,8 +21,7 @@ class SingOut extends Component {
       )
     }    
 
-    alertFail=(success)=>{
-      console.log("alert",this.props.user.success);
+    alertFail=(success)=>{      
       if(success===401){
         return(this.swalFire('Usuario o clave invalida!'))
       }
@@ -43,12 +38,11 @@ class SingOut extends Component {
         password:this.passwordRef.current.value
       }
       console.log("submin");
-      await this.props.handleSingIn(data)      
-      this.alertFail(this.props.user.success)
+      await this.props.handleSingup(data)      
+      this.alertFail(this.props.success)
     }
 
-    render() { 
-      this.props.handleIsSingInToken()
+    render() {       
         return (
             <div className="container">          
           <div className="row">            
@@ -99,10 +93,10 @@ class SingOut extends Component {
 }
 const mapStateToProps = state=>{  
   return {
-    user:state.userData.user
+    success:state.userData.user.success
   }
 
   
 }
  
-export default connect(mapStateToProps,{handleSingup,handleIsSingInToken,handleSingIn})(SingOut);
+export default connect(mapStateToProps,{handleSingup,handleIsSingInToken})(SingOut);

@@ -1,8 +1,8 @@
 import {SING_IN,SING_UP, IS_SING_IN, SING_OUT} from './types';
 import Axios  from 'axios';
 import jwtDecode from 'jwt-decode';
-
-const url='http://localhost:4000/api/';
+const url='https://myapp256.herokuapp.com/api/';
+//const url='http://localhost:4000/api/';
 /**
  * 
                                         LOGIN
@@ -63,11 +63,12 @@ export  const handleSingup =(data)=>async dispatch=>{
         username: data.username,
         password: data.password        
     }).then(res=>{       
+        console.log(res);
+        
         res.data.token =res.data.token.split(" ")[1]                      
         Axios.defaults.headers.common={'Authorization':res.data.token}
         localStorage.setItem("token",res.data.token)
-        localStorage.setItem("check",res.data.token)
-        const token= localStorage.setItem('token')
+        localStorage.setItem("check",res.data.token)        
            const data={
                data:jwtDecode(res.data.token),
                token:res.data.token,
@@ -92,7 +93,8 @@ export  const handleSingup =(data)=>async dispatch=>{
                 })            
         }
         
-    }).catch(e=>{        
+    }).catch(e=>{      
+        console.log(e);  
         const err = e.toString().includes("401")?401:404;
         const data={
             success :err,

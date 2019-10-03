@@ -8,9 +8,9 @@ class IndexPage extends Component {
    setTimeout(() => {
     this.getAlert();
    }, 2000); 
-   let intro = document.getElementById('fondo');
-      intro.className = "fondo"
-      console.log(intro.className);
+  //let intro = document.getElementById('fondo');
+  //   intro.className = "fondo"
+  //   console.log(intro.className);
     }
 
     getAlert=()=>{

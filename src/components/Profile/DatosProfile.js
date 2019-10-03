@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {connect  } from 'react-redux';
 
 import { handleIsSingInToken } from  '../../actions/singActions';
-import{modifyData} from '../../actions/userActios'
+import{handleSingFirst} from '../../actions/userActios'
 
 class DatosProfile extends Component {
     state = {  }
@@ -40,7 +40,7 @@ class DatosProfile extends Component {
 
             }
             console.log(data);
-            this.props.modifyData(data);
+            this.props.handleSingFirst(data);
             
            
             
@@ -84,8 +84,8 @@ class DatosProfile extends Component {
                                         <label htmlFor="inputGroupSelect01"></label>
                                             <div className="input-group ">  
                                           <select className="custom-select" id="inputGroupSelect01" ref={this.generoRef}>
-                                                <option disabled >sexo</option>
-                                                <option value="male">Masculino</option>
+                                                <option selected>sexo</option>
+                                                <option defaultValue  value="male">Masculino</option>
                                                 <option value="female">Femenino</option>    
                                             </select>
                                             </div>
@@ -163,7 +163,7 @@ const mapStateToProps = state=>{
     }
   }
  
-export default connect(mapStateToProps,{modifyData,handleIsSingInToken})(DatosProfile);
+export default connect(mapStateToProps,{handleSingFirst,handleIsSingInToken})(DatosProfile);
 
 /*
 

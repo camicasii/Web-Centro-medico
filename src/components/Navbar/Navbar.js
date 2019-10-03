@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink,Link } from 'react-router-dom';
 import SingOptions from './Sing';
-
+//Redux
+import { connect  } from  'react-redux';
+//import { handleSingIn} from '../actions/singActions'
 class Navbar extends Component {
   state = { sing:false }
   render() { 
@@ -38,9 +40,7 @@ class Navbar extends Component {
               <li className="nav-item">
               <Link to='/contact'><span className="nav-link" href="none">Contacto</span></Link>
               </li>
-              <SingOptions
-                sing={!this.state.sing}
-              />
+              <SingOptions/>
             </ul>
         </div>
       </nav>
@@ -48,4 +48,4 @@ class Navbar extends Component {
   }
 }
  
-export default Navbar;
+export default  Navbar;
