@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import {connect  } from 'react-redux';
 
-import { handleIsSingInToken } from  '../../actions/singActions';
-import{handleSingFirst} from '../../actions/userActios'
+import { handleIsSingInToken } from  '../../../../actions/singActions';
+import{handleSingFirst} from '../../../../actions/userActios'
 
 class DatosProfile extends Component {
     state = {  }
@@ -27,6 +27,7 @@ class DatosProfile extends Component {
         }
         submin=(e)=>{
             e.preventDefault()
+            const userId = this.props.userId;
             const data={
                 firstName:this.nombreRef.current.value,
                 lastName:this.apellidoRef.current.value,
@@ -36,11 +37,11 @@ class DatosProfile extends Component {
                 direction:this.adressRef.current.value,
                 dni:this.dni.current.value,
                 genero:this.generoRef.current.value,
-                user:this.props.userId
+                user:userId
 
             }
-            console.log(data);
-            this.props.handleSingFirst(data);
+            //console.log(data);
+            this.props.handleSingFirst(data,userId);
             
            
             

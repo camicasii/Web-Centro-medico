@@ -8,7 +8,7 @@ const SideBar = (props) => {
         <li>
           <div className="logo-conten">
             <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
-                className="rounded-circle logo-sider mb-1 pt-3"/>
+                className="rounded-circle logo-sider mb-1 pt-3" alt="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"/>
                 <span className="text-success d-block">AnnaDeynah</span>
           </div>
         </li>
@@ -20,20 +20,20 @@ const SideBar = (props) => {
         <li className="justinfy-content-end">
           <ul className="tip-menu ">
           <li  id= "casa"> 
-             <Link to='/profile/cita'> <a href="#" className="side-A"> Solicitar citas
-              <i className="fa fa-chevron-right"></i></a></Link>
+             <Link to='/profile/cita'> <span className="side-A"> Solicitar citas
+              <i className="fa fa-chevron-right"></i></span></Link>
           </li>
           <li id= "casa">
-          <Link to='/profile/showcita'><a href="#" className="side-A"> Mostral Citas
-              <i className="fa fa-chevron-right"></i></a></Link>
+          <Link to='/profile/showcita'><span  className="side-A"> Mostral Citas
+              <i className="fa fa-chevron-right"></i></span></Link>
           </li>
           <li id= "casa">
-          <Link to='/profile/edit'><a href="#" className="side-A"> Editar perfil
-              <i className="fa fa-chevron-right"></i></a></Link>
+          <Link to='/profile/edit'><span className="side-A"> Editar perfil
+              <i className="fa fa-chevron-right"></i></span></Link>
           </li>
           <li id= "casa">
-          <Link to='/profile/Tips'><a href="#" className="side-A"> Tips Medicos
-              <i className="fa fa-chevron-right"></i></a></Link>
+          <Link to='/profile/Tips'><span className="side-A"> Tips Medicos
+              <i className="fa fa-chevron-right"></i></span></Link>
           </li>
           </ul>
         </li>

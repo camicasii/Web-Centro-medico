@@ -14,13 +14,18 @@ const SingOptions =(props)=> {
         <li className="nav-item">        
         <Link to='/'> <button type="button" onClick={props.handleSingOut}
         className="btn btn-info btn-rounded btn-lg p-1">SingOut
-        <i className="fas fa-sign-in-alt fa-sm ml-2" aria-hidden="true"></i></button></Link>
+        <i className="fas fa-sign-out-alt fa-sm ml-2" aria-hidden="true"></i></button></Link>
+        </li>
+        <li className="nav-item">        
+        <Link to='/profile'> <button type="button" onClick={props.handleSingOut}
+        className="btn btn-info btn-rounded btn-lg p-1">Profile
+        <i className="fas fa-sign fa-sm ml-2" aria-hidden="true"></i></button></Link>
         </li>
     </React.Fragment>:
         <React.Fragment>
         <li className="nav-item">        
-        <Link to='/SingUp'><button type="button" className="btn btn-info btn-rounded btn-lg p-1">SingUp
-        <i className="fas fa-sign-in-alt fa-sm ml-2" aria-hidden="true"></i></button>     </Link>   
+        <Link to='/SingUp'><button type="button" className="btn btn-danger btn-lg p-1">SingUp
+        <i className="fas fa-user-plus fa-sm ml-2" aria-hidden="true"></i></button>     </Link>   
       </li>
 
        <li className="nav-item">        

@@ -1,38 +1,43 @@
 import React, { Component } from 'react';
 import SideBar from './SideBar';
-const mql = window.matchMedia(`(min-width: 800px)`);
+import {connect} from 'react-redux';
+import{ handleShowUser } from '../../actions/userActios';
+//const mql = window.matchMedia(`(min-width: 800px)`);
+
+let datosRedux = false;
+
 
 class Profile extends Component {
     state = {
-        sidebarDocked: mql.matches,
       sidebarOpen: false
      }
 
-     onSetSidebarOpen=(e)=> {
-         console.log("opasasd");
+     componentDidMount(){
+      this.dataPerfil()
+     }
 
-        e.preventDefault();
-        const a = document.getElementById('wrapper')
-        a.classList.toggle("myMenu")
+      dataPerfil=()=>{      
+      
+      
+       this.props.handleShowUser()
 
+     }
 
-      }
-
-      mediaQueryChanged=()=> {
-        console.log("chage");
-        this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
-      }
-
-
+     
 
 
     render() {
+            
+      const resultado = this.props.userId?true:false
+      
         return (
   
-  <React.Fragment>
+  <React.Fragment>  
 <div className="container-flux">
 <SideBar/>
-
+<div className="d-none" onChange={this.dataPerfil}>
+  {resultado}
+</div>
 <div className="page-ware ">             
 <div className="container page-ware-content ">
 <div className="row">
@@ -74,5 +79,12 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+const mapStateToProps = state=>{  
+  return {
+    userId:state.userData.user._id,
+    a:state.userData.user
+  }
+}
+
+export default connect(mapStateToProps,{handleShowUser})( Profile);
 

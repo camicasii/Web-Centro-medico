@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink,Link } from 'react-router-dom';
 import SingOptions from './Sing';
-//Redux
-import { connect  } from  'react-redux';
-//import { handleSingIn} from '../actions/singActions'
+
 class Navbar extends Component {
   state = { sing:false }
   render() { 

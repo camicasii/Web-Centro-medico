@@ -16,7 +16,7 @@ export const handleSingIn=(data)=>async dispatch=>{
            Axios.defaults.headers.common={'Authorization':res.data.token}
            localStorage.setItem("token",res.data.token)
            localStorage.setItem("check",res.data.token)
-           console.log("post",Axios.defaults.headers.common.Authorization)
+           console.log("post",jwtDecode(res.data.token).firstLogin)
            const data={
                data:jwtDecode(res.data.token),
                token:res.data.token,
@@ -28,6 +28,7 @@ export const handleSingIn=(data)=>async dispatch=>{
             type:SING_IN,
             payload:data
             })
+            window.location.href='/profile'
         }
         else
         {   
@@ -61,7 +62,8 @@ export const handleSingIn=(data)=>async dispatch=>{
 export  const handleSingup =(data)=>async dispatch=>{
     await Axios.post(url+'signup',{
         username: data.username,
-        password: data.password        
+        password: data.password,
+        firstLogin:data.firstLogin  
     }).then(res=>{       
         console.log(res);
         
@@ -72,7 +74,7 @@ export  const handleSingup =(data)=>async dispatch=>{
            const data={
                data:jwtDecode(res.data.token),
                token:res.data.token,
-               success:res.data.success,
+               success:res.data.success,               
                login:true
            }
 
@@ -162,8 +164,13 @@ export  const handleSingOut =(data)=>async dispatch=>{
     }
     export  const handleIsSingInToken =(data)=>async dispatch=>{        
           const token= localStorage.getItem('token')
+          console.log(token);
+          
           const check= localStorage.getItem("check")
-          const user=jwtDecode(token)
+          let user=""
+          if(token !== null)
+          user=jwtDecode(token)
+          
           
         const data={         
             succes:token===check,

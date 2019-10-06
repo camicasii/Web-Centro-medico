@@ -35,7 +35,8 @@ class SingOut extends Component {
       e.preventDefault();
       const data = {
         username:this.usernameRef.current.value,
-        password:this.passwordRef.current.value
+        password:this.passwordRef.current.value,
+        firstLogin:true
       }
       console.log("submin");
       await this.props.handleSingup(data)      

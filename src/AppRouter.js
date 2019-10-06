@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import SingIn from './components/SingIn';
 import SingOut from './components/SingUp';
 import Servicios from './components/Servicios';
-import DatosProfile from './components/Profile/DatosProfile';
+import DatosProfile from './components/Profile/Plus/Datos/DatosProfile';
 import Profile from './components/Profile/Profile';
 
 import { connect  } from  'react-redux';

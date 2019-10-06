@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 class IndexPage extends Component {
     state = {  }
     componentDidMount(){
-   setTimeout(() => {
+ /*  setTimeout(() => {
     this.getAlert();
-   }, 2000); 
+   }, 2000); */
   //let intro = document.getElementById('fondo');
   //   intro.className = "fondo"
   //   console.log(intro.className);
